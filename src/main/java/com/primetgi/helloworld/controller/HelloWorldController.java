@@ -25,5 +25,14 @@ public class HelloWorldController {
 						"Welcome to Spring MVC Application, this is from hiWorld");
 		return modelAndView;
 	}
+	
+	@RequestMapping("/hi/country/{userName}")
+	public ModelAndView displayMsgForRandomURL() {
+		ModelAndView modelAndView = new ModelAndView("helloworld");
+		modelAndView
+				.addObject("msg",
+						"Welcome to Spring MVC Application, this message is when passing random url");
+		return modelAndView;
+	}
 
 }
