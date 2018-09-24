@@ -1,19 +1,19 @@
 package com.primetgi.helloworld.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
 
-//Each controller needs to extend BaseController class
-public class HelloWorldController extends AbstractController {
+@Controller
+public class HelloWorldController {
 
-	@Override
-	protected ModelAndView handleRequestInternal(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+	@RequestMapping("/welcome")
+	public ModelAndView helloWorld() {
 		ModelAndView modelAndView = new ModelAndView("helloworld");
-		modelAndView.addObject("msg", "Welcome to first Spring Application");
+		modelAndView
+				.addObject("msg",
+						"Welcome to Spring MVC Application, developed using spring annotations");
 		return modelAndView;
 	}
+
 }
