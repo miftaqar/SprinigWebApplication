@@ -1,6 +1,7 @@
 package com.primetgi.helloworld.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -32,6 +33,15 @@ public class HelloWorldController {
 		modelAndView
 				.addObject("msg",
 						"Welcome to Spring MVC Application, this message is when passing random url");
+		return modelAndView;
+	}
+	
+	@RequestMapping("/hi/pathVar/{userName}")
+	public ModelAndView displayMsgForpathURL(@PathVariable("userName") String name) {
+		ModelAndView modelAndView = new ModelAndView("helloworld");
+		modelAndView
+				.addObject("msg",
+						"Welcome to Spring MVC Application, pleased to meet with "+name);
 		return modelAndView;
 	}
 
