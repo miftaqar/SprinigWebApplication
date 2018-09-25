@@ -1,5 +1,7 @@
 package com.primetgi.studentadmission.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,10 +17,24 @@ public class StudentAdmissionController {
 		return modelAndView;
 	}
 
+	// @RequestMapping(value = "/submitAdmissionForm.html", method =
+	// RequestMethod.POST)
+	// public ModelAndView submitAdmissionForm(
+	// @RequestParam(value = "studentName", defaultValue = "Mohd Ifteqar Ahmed")
+	// String name,
+	// @RequestParam("studentHobby") String hobby) {
+	// ModelAndView modelAndView = new ModelAndView("admissionSuccess");
+	// modelAndView.addObject("message", "Here are your details, Name: "
+	// + name + " and your Hobby: " + hobby);
+	// return modelAndView;
+	// }
+
 	@RequestMapping(value = "/submitAdmissionForm.html", method = RequestMethod.POST)
 	public ModelAndView submitAdmissionForm(
-			@RequestParam(value = "studentName", defaultValue = "Mohd Ifteqar Ahmed") String name,
-			@RequestParam("studentHobby") String hobby) {
+			@RequestParam Map<String, String> reqPar) {
+		String name = reqPar.get("studentName");
+		String hobby = reqPar.get("studentHobby");
+		
 		ModelAndView modelAndView = new ModelAndView("admissionSuccess");
 		modelAndView.addObject("message", "Here are your details, Name: "
 				+ name + " and your Hobby: " + hobby);
