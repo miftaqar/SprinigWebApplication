@@ -9,6 +9,16 @@
 <body>
 	<h1>Thanks for Submitting the details</h1>
 	<br>
-	<h2>${message}</h2>
+	<h2>Below are your details</h2>
+	<table>
+		<tr>
+			<td>Name: </td>
+			<td>${student.studentName}</td>
+		</tr>
+		<tr>
+			<td>Hobby: </td>
+			<td>${student.studentHobby}</td>
+		</tr>
+	</table>
 </body>
 </html>
