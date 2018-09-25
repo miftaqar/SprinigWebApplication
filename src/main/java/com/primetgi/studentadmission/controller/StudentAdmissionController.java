@@ -17,6 +17,7 @@ public class StudentAdmissionController {
 	@RequestMapping(value = "/admissionForm.html", method = RequestMethod.GET)
 	public ModelAndView getAdmissionForm() {
 		ModelAndView modelAndView = new ModelAndView("admissionForm");
+		modelAndView.addObject("commonMsg", "Student Hobby Application");
 		return modelAndView;
 	}
 
@@ -69,6 +70,7 @@ public class StudentAdmissionController {
 			@ModelAttribute("student") Student student) {
 
 		ModelAndView modelAndView = new ModelAndView("admissionSuccess");
+		modelAndView.addObject("commonMsg", "Student Hobby Application");
 
 		return modelAndView;
 	}

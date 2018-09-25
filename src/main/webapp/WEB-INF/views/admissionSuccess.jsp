@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Thanks for Submitting the details</h1>
+	<h1>${commonMsg}</h1>
+	<br>
+	<h2>Thanks for Submitting the details</h2>
 	<br>
 	<h2>Below are your details</h2>
 	<table>

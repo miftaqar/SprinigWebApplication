@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>Welcome to Spring - Student Application Form</h1>
+	<h3>${commonMsg}</h3>
 	<form action="/SpringWebApplication/submitAdmissionForm.html" method="post">
 		<table>
 			<tr>
