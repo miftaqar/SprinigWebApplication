@@ -17,7 +17,7 @@ public class StudentAdmissionController {
 
 	@RequestMapping(value = "/submitAdmissionForm.html", method = RequestMethod.POST)
 	public ModelAndView submitAdmissionForm(
-			@RequestParam("studentName") String name,
+			@RequestParam(value = "studentName", defaultValue = "Mohd Ifteqar Ahmed") String name,
 			@RequestParam("studentHobby") String hobby) {
 		ModelAndView modelAndView = new ModelAndView("admissionSuccess");
 		modelAndView.addObject("message", "Here are your details, Name: "
